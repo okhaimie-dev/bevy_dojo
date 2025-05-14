@@ -2,6 +2,7 @@
 name = "bevy_dojo"
 version = "0.0.1"
 authors = ["Okhai Omotuebe <okhaio@protonmail.com>"]
+description = "A Bevy plugin for Starknet blockchain integration"
 repository = "https://github.com/okhaimie-dev/bevy_dojo/"
 license = "MIT OR Apache-2.0"
 keywords = ["bevy", "gamedev", "starknet", "blockchain"]
