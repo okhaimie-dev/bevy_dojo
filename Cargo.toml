@@ -1,0 +1,33 @@
+[package]
+name = "bevy_dojo"
+version = "0.0.2"
+authors = ["Okhai Omotuebe <okhaio@protonmail.com>"]
+description = "A Bevy plugin for Starknet blockchain integration"
+repository = "https://github.com/okhaimie-dev/bevy_dojo/"
+license = "MIT OR Apache-2.0"
+keywords = ["bevy", "gamedev", "starknet", "blockchain"]
+categories = ["game-development"]
+edition = "2024"
+
+# Enable max optimizations for dependencies, but not for our code:
+[profile.dev.package."*"]
+opt-level = 3
+
+# If your own code does CPU-intensive work, you might want to also enable some optimization for it.
+# Enable only a small amount of optimization in debug mode
+[profile.dev]
+opt-level = 1
+
+[dependencies]
+bevy = { version = "0.16.0", default-features = false, features = [
+  "bevy_log",
+  "bevy_state",
+  "serialize",
+  "bevy_asset",
+  "bevy_color",
+  "multi_threaded",
+  "sysinfo_plugin",
+] }
+starknet = "0.15.1"
+tokio = { version = "1.0", features = ["full"] }
+futures = "0.3"
