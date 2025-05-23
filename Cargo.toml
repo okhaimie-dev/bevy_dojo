@@ -11,6 +11,15 @@ keywords = ["bevy", "gamedev", "starknet", "blockchain"]
 categories = ["game-development"]
 edition = "2024"
 
+# Enable max optimizations for dependencies, but not for our code:
+[profile.dev.package."*"]
+opt-level = 3
+
+# If your own code does CPU-intensive work, you might want to also enable some optimization for it.
+# Enable only a small amount of optimization in debug mode
+[profile.dev]
+opt-level = 1
+
 [dependencies]
 bevy = { version = "0.16.0", default-features = false, features = [
   "bevy_log",
